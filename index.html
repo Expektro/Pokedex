@@ -1,0 +1,92 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+    <style>
+      * {
+        margin: 0;
+        padding: 0;
+      }
+      .container {
+        width: 100vw;
+        height: 100vh;
+        background: linear-gradient(to bottom, rgb(94, 160, 232), white);
+        display: flex;
+        justify-content: center;
+      }
+      .pokedex {
+        width: 300px;
+        height: 450px;
+        margin-top: 15px;
+        background-color: brown;
+        display: flex;
+        align-items: center;
+        justify-content: space-evenly;
+        border-radius: 5px;
+        flex-direction: column;
+      }
+      .botoes {
+        display: flex;
+      }
+      button {
+        height: 30px;
+        width: 70px;
+        border: none;
+        margin: 10px;
+        cursor: pointer;
+      }
+      .nome {
+        padding: 10px;
+      }
+      .id {
+        padding: 10px;
+        margin-left: -132px;
+      }
+      .div-imagem {
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        border-radius: 2px;
+        width: 170px;
+        height: 170px;
+        background: linear-gradient(rgb(0, 255, 140), white);
+      }
+      #ima {
+        width: 140px;
+        display: flex;
+      }
+      input[type="search"] {
+        width: 240px;
+        height: 30px;
+      }
+      button:hover {
+        background-color: rgb(207, 206, 206);
+      }
+    </style>
+  </head>
+  <body>
+    <div class="container">
+      <div class="pokedex" id="pokedex">
+        <div class="div-imagem">
+          <img id="ima" src="" />
+        </div>
+        <h2 class="nome">Nome:</h2>
+        <h3 id="id" class="id">ID:</h3>
+        <form class="form">
+          <input
+            type="search"
+            class="Pesquisar"
+            placeholder="Pesquise seu Pokémon"
+          />
+        </form>
+        <div class="botoes">
+          <button class="anterior">Voltar</button>
+          <button class="proximo">Próximo</button>
+        </div>
+      </div>
+    </div>
+    <script src="index.js"></script>
+  </body>
+</html>
