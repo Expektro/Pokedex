@@ -5,6 +5,7 @@ const form = document.querySelector(".form");
 const search = document.querySelector(".Pesquisar");
 const anterior = document.querySelector(".anterior");
 const proximo = document.querySelector(".proximo");
+const tipo_elemento = document.querySelector(".tipo");
 var num = 1;
 
 const fetchPoke = async (pokemon) => {
@@ -13,18 +14,23 @@ const fetchPoke = async (pokemon) => {
   );
   if (RespostaAPI.status === 200) {
     const data = await RespostaAPI.json();
+    console.log(data);
     return data;
   }
 };
 const Pokemon = async (pokemon) => {
   nome.innerHTML = "Carregando...";
   id.innerHTML = "";
+  tipo_elemento.innerHTML = " ";
   const data = await fetchPoke(pokemon);
   if (data) {
     imagem.style.display = "block";
     nome.innerHTML = `Nome: ${data.name}`;
     id.innerHTML = `ID: ${data.id}`;
-
+    tipo_elemento.innerHTML = `Elemento: ${data.types[0].type.name}`;
+    if (data.types[1]) {
+      tipo_elemento.innerHTML += `,<br> ${data.types[1].type.name}`;
+    }
     imagem.src =
       data["sprites"]["versions"]["generation-v"]["black-white"]["animated"][
         "front_default"
